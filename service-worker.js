@@ -1,5 +1,5 @@
 // Offline-first after the first successful page load.
-const CACHE = 'zokei-design-jiten-v3';
+const CACHE = 'zokei-design-jiten-v4';
 const ASSETS = ['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
