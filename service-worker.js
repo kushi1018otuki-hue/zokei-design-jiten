@@ -1,6 +1,6 @@
 // Offline-first after the first successful page load.
-const CACHE = 'zokei-design-jiten-v9';
-const ASSETS = ['./','./index.html','./patterns.js','./patterns.css','./military-atlas.js','./fortress.js','./fortress.css','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
+const CACHE = 'zokei-design-jiten-v10';
+const ASSETS = ['./','./index.html','./patterns.js','./patterns.css','./military-atlas.js','./fortress.js','./fortress.css','./ui-v45.js','./ui-v45.css','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });

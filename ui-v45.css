@@ -1,0 +1,159 @@
+/* v4.5: Search-first and accessible mobile navigation. Does not modify term content. */
+html{scroll-padding-top:14px}
+body.ux-ready{background:#071622;color:#eff8f7}
+body.ux-ready .masthead{padding:13px 0 12px;border-bottom:1px solid #3c6677;background:#0b2735}
+body.ux-ready .masthead .shell{display:flex;align-items:center;justify-content:space-between;gap:12px}
+body.ux-ready .masthead .topline,body.ux-ready .masthead .lead,body.ux-ready .masthead .hero-stats{display:none}
+body.ux-ready .masthead .hero-title{font-size:clamp(20px,4.5vw,26px);margin:0;letter-spacing:-.04em;line-height:1.25}
+.ux-hero-info{text-align:right;font-size:10px;line-height:1.45;color:#afcbd4;white-space:nowrap}
+.ux-hero-info strong{display:block;color:#a3edda;font-size:13px;font-weight:900}
+body.ux-ready .main{padding-top:15px;padding-bottom:calc(106px + env(safe-area-inset-bottom));max-width:1030px}
+.ux-view[hidden]{display:none!important}
+.ux-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 0 12px}
+.ux-heading h2{margin:0;color:#f1faf9;font-size:21px;font-weight:900;letter-spacing:-.03em}
+.ux-heading p{margin:3px 0 0;font-size:12px;color:#a6c5d1;line-height:1.5}
+.ux-heading .ux-version{border:1px solid #437788;color:#afded4;border-radius:8px;font-size:11px;padding:6px 8px;white-space:nowrap;font-weight:800}
+.ux-view .toolbar{position:sticky;top:0;z-index:32;margin-bottom:13px;padding:9px 9px 8px;border:1px solid #52798e;border-radius:12px;background:#0e293af8;box-shadow:0 9px 24px #00101a55;backdrop-filter:blur(14px)}
+.ux-view .searchbox input{min-height:52px;padding-left:44px;padding-right:52px;border-color:#6993a1;font-size:16px;color:#fff}
+.ux-view .searchicon{top:14px;font-size:23px}
+.ux-view .resetsearch{top:7px;right:8px;min-height:38px;height:38px;width:41px}
+.ux-filter-details{border-top:1px solid #2d4c5d;margin-top:8px;padding-top:5px}
+.ux-filter-details summary{color:#c4e0e5;font-size:12px;font-weight:800;cursor:pointer;min-height:30px;display:flex;gap:5px;align-items:center;list-style:none}
+.ux-filter-details summary::-webkit-details-marker{display:none}
+.ux-filter-details summary::after{content:'▾';margin-left:3px;color:#90eddb}
+.ux-filter-details[open] summary::after{content:'▴'}
+.ux-filter-details .filters{margin-top:9px;padding:5px 2px 8px;max-height:160px;overflow-y:auto;overflow-x:hidden;flex-wrap:wrap}
+.ux-filter-details .filters button{font-size:12px;min-height:38px}
+.ux-category-wrapper{margin:12px 0 18px}
+.ux-mini-heading{display:flex;align-items:baseline;justify-content:space-between;gap:9px;margin:0 0 8px}
+.ux-mini-heading h3{margin:0;font-size:14px;color:#e6f4f3;font-weight:900}
+.ux-mini-heading span{font-size:11px;color:#a3c4cb}
+.ux-categories{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.ux-cat{border:1px solid #466d80;border-radius:11px;background:linear-gradient(150deg,#17394d,#122c3e);color:#eaf8f6;text-align:left;min-width:0;min-height:83px;padding:10px 11px;display:grid;grid-template-columns:35px minmax(0,1fr);gap:7px;align-items:center;transition:background .15s,border-color .15s}
+.ux-cat.ux-cat-active{border-color:#a9e5d2;box-shadow:inset 0 0 0 1px #a9e5d2;background:#215264}
+.ux-cat:focus-visible,.ux-nav-tab:focus-visible,.ux-visual-tile:focus-visible{outline:3px solid #f5d088;outline-offset:2px}
+.ux-cat .ux-cat-icon{width:34px;height:34px;display:grid;place-items:center;border:1px solid #446e7c;border-radius:8px;background:#244b59;font-size:21px}
+.ux-cat .ux-cat-title{font-size:13px;line-height:1.28;font-weight:900;display:block}
+.ux-cat .ux-cat-sub{font-size:10px;line-height:1.35;color:#a6cbd1;display:block;margin-top:4px}
+.ux-results-label{margin:18px 0 4px;padding:0 1px;display:flex;justify-content:space-between;align-items:center}
+.ux-results-label h3{font-size:16px;color:#f0f8f5;margin:0}
+.ux-results-label .ux-results-hint{font-size:11px;color:#a0c8ca}
+.ux-view .statsline{margin:3px 0 8px;font-size:12px}
+.ux-view .statsline b{color:#8fe5d3}
+.ux-view .tiny-action{min-height:35px}
+#uxFindView .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+#uxFindView .compact-card{border-color:#416779;background:linear-gradient(160deg,#1a3544,#112c3b);border-radius:11px}
+#uxFindView .compact-card .term-title{color:#f4faf8;font-weight:900;font-size:15px;line-height:1.4}
+#uxFindView .compact-card .brief-meta{font-size:10px;color:#8fdfd4}
+#uxFindView .compact-card .compact-desc{font-size:13px;line-height:1.6;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+#uxFindView .compact-card .figbox{background:#10283b;border:1px solid #527f89}
+#uxFindView .compact-card .term-more summary{font-size:13px;font-weight:800;color:#e7eecf;min-height:39px}
+#uxFindView .compact-card .term-more .prompt{font-size:13px}
+#uxFindView .compact-card .detail-line{font-size:12.5px}
+#uxFindView .compact-card .quick-actions button{min-height:39px;font-size:12px}
+#uxFindView #loadMore{margin:18px auto 9px;min-height:46px;min-width:180px;font-size:13px}
+.ux-visual-lead{border:1px solid #315668;background:#122e3d;border-radius:12px;padding:11px 13px;font-size:12px;color:#c3dce1;line-height:1.8;margin-bottom:13px}
+.ux-visual-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:16px}
+.ux-visual-tile{background:linear-gradient(140deg,#193e51,#122d3d);color:#ebf7f7;border:1px solid #517989;border-radius:12px;padding:12px;min-height:91px;text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px}
+.ux-visual-tile strong{font-size:14px;line-height:1.3}
+.ux-visual-tile span{font-size:11px;line-height:1.4;color:#a6d1d4}
+.ux-visual-tile em{font-size:21px;line-height:1;font-style:normal}
+.ux-accordion{border-radius:12px;overflow:hidden;border:1px solid #456e81;background:#102b3a;margin:0 0 11px}
+.ux-accordion>summary{list-style:none;display:flex;align-items:center;gap:12px;cursor:pointer;padding:13px 14px;min-height:65px}
+.ux-accordion>summary::-webkit-details-marker{display:none}
+.ux-accordion>summary .ux-accordion-icon{border:1px solid #496f7b;border-radius:9px;background:#23495a;padding:8px;font-size:19px}
+.ux-accordion>summary .ux-accordion-copy{flex:1;min-width:0}
+.ux-accordion>summary .ux-accordion-copy strong{display:block;font-size:14px;color:#f4f7f6}
+.ux-accordion>summary .ux-accordion-copy span{display:block;font-size:11px;color:#a7c7cf;line-height:1.5;margin-top:3px}
+.ux-accordion>summary .ux-open-arrow{color:#9be8d7;font-size:16px}
+.ux-accordion[open]>summary .ux-open-arrow{transform:rotate(180deg)}
+.ux-accordion[open]>.ux-accordion-content{padding:7px 8px 12px;border-top:1px solid #315566}
+.ux-accordion-content>.weapon-feature,.ux-accordion-content>.nextgen-feature,.ux-accordion-content>.deploy-feature{margin:0;padding:11px 9px;border:0;border-radius:8px;box-shadow:none}
+.ux-accordion-content>.discovery{margin:6px 0 12px}
+.ux-accordion-content>.mapfoot{margin:0 5px 10px}
+#uxVisualView .fortress-zone,#uxVisualView .pattern-zone{margin-bottom:11px}
+#uxVisualView .fort-wordlist{max-height:300px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;align-content:start}
+#uxVisualView .fort-wordlist button{border-radius:9px;font-size:13px;font-weight:800;text-align:left;min-height:46px;white-space:normal;overflow-wrap:anywhere}
+#uxVisualView .fort-searchline input{min-height:47px}
+#uxVisualView .fort-groupbuttons button{min-height:46px;font-size:12.5px}
+#uxVisualView .pattern-chips button{min-height:43px}
+#uxVisualView .pattern-item-meta strong{font-size:14px}
+body.ux-ready #builder:not(.open){display:none}
+body.ux-ready #builder.open{display:block;position:fixed;left:0;right:0;bottom:calc(68px + env(safe-area-inset-bottom));z-index:91;max-height:calc(100dvh - 100px - env(safe-area-inset-bottom));overflow:auto;border-radius:18px 18px 0 0;padding:12px 0 4px;background:#133244;box-shadow:0 -15px 65px #000b;border:1px solid #638b95;border-bottom:0}
+body.ux-ready #builder.open .builder-caption{font-size:11px}
+body.ux-ready #builder.open .builder-caption strong{font-size:15px}
+body.ux-ready #builder.open .builder-panel{max-height:calc(100dvh - 240px - env(safe-area-inset-bottom));padding:10px 0 20px;overflow:auto}
+body.ux-ready #builder .builder-buttons button{min-height:41px}
+body.ux-ready #builder .builder-inner{padding:0 14px}
+body.ux-ready #builder #builderPanel{border-color:#568392}
+.ux-backdrop{display:none}
+.ux-backdrop.ux-visible{display:block;position:fixed;inset:0;z-index:80;background:#000a;border:0;cursor:default}
+.ux-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:92;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;padding:6px max(8px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));background:#0c2938;backdrop-filter:blur(18px);border-top:1px solid #5b8695;box-shadow:0 -7px 24px #00121d88}
+.ux-nav-tab{border:0;border-radius:9px;padding:7px 0 6px;background:transparent;color:#b5d5dd;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:49px;position:relative}
+.ux-nav-tab .ux-nav-icon{font-size:21px;line-height:1.1}
+.ux-nav-tab .ux-nav-label{font-size:11px;line-height:1.2;font-weight:800}
+.ux-nav-tab[aria-current="page"],.ux-nav-tab[aria-pressed="true"]{color:#061f29;background:#90e7d0}
+.ux-nav-tab .ux-badge{position:absolute;top:0;right:max(14%,8px);min-width:17px;height:17px;display:grid;place-items:center;font-size:10px;font-weight:900;border-radius:99px;background:#f4c47e;color:#162b32}
+.ux-nav-tab .ux-badge[hidden]{display:none}
+body.ux-ready .footer{margin-top:28px;padding-bottom:15px}
+.ux-empty-fav{background:#123143;border:1px dashed #688e9b;border-radius:12px;padding:24px 16px;line-height:1.75;color:#c8e5e4;font-size:13px;text-align:center;margin:12px 0}
+@media (max-width:800px){
+  .ux-categories{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #uxFindView .grid{grid-template-columns:1fr}
+  .ux-visual-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.ux-ready .shell{padding-left:14px;padding-right:14px}
+}
+@media (max-width:420px){
+  body.ux-ready .masthead .shell{padding:0 15px}
+  body.ux-ready .masthead .hero-title{font-size:21px}
+  .ux-cat{min-height:74px;padding:9px 10px;grid-template-columns:29px minmax(0,1fr)}
+  .ux-cat .ux-cat-icon{width:28px;height:28px;font-size:18px}
+  .ux-cat .ux-cat-title{font-size:13px}
+  .ux-cat .ux-cat-sub{font-size:10px}
+  .ux-heading h2{font-size:19px}
+  .ux-visual-tiles{gap:7px}
+  .ux-visual-tile{min-height:88px;padding:11px}
+  #uxVisualView .fort-wordlist{grid-template-columns:1fr;max-height:256px}
+  #uxFindView .compact-card .cardmain{grid-template-columns:112px minmax(0,1fr);gap:10px}
+  #uxFindView .compact-card .term-title{font-size:15px}
+  #uxFindView .compact-card .compact-desc{font-size:12.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ux-cat,.ux-accordion,.ux-nav-tab{transition:none}
+}
+
+/* Final refinements: compact visual index, comfortable scrolling, favorites-only view. */
+.ux-results-label{scroll-margin-top:105px}
+.ux-accordion,.fortress-zone,.pattern-zone{scroll-margin-top:14px}
+body.ux-mode-favorites .ux-category-wrapper,body.ux-mode-favorites .toolbar{display:none!important}
+body.ux-mode-favorites .ux-results-label{margin-top:9px}
+#uxVisualView .fortress-explorer:not([open]) .fort-summary,
+#uxVisualView .pattern-explorer:not([open]) .pattern-summary{
+  display:flex;align-items:center;gap:9px;min-height:65px;padding:12px 14px
+}
+#uxVisualView .fortress-explorer:not([open]) .fort-summary p,
+#uxVisualView .fortress-explorer:not([open]) .fort-kicker,
+#uxVisualView .fortress-explorer:not([open]) .fort-pic,
+#uxVisualView .pattern-explorer:not([open]) .pattern-summary p,
+#uxVisualView .pattern-explorer:not([open]) .pattern-kicker,
+#uxVisualView .pattern-explorer:not([open]) .pattern-teasers{display:none}
+#uxVisualView .fortress-explorer:not([open]) .fort-summary h2,
+#uxVisualView .pattern-explorer:not([open]) .pattern-summary h2{font-size:16px;line-height:1.5;letter-spacing:-.02em;margin:0 0 5px}
+#uxVisualView .fortress-explorer:not([open]) .fort-open,
+#uxVisualView .pattern-explorer:not([open]) .pattern-cta{padding:4px 8px;font-size:11px}
+#uxVisualView .fortress-explorer[open] .fort-summary,
+#uxVisualView .pattern-explorer[open] .pattern-summary{padding:12px 14px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+#uxVisualView .fortress-explorer[open] .fort-pic,
+#uxVisualView .pattern-explorer[open] .pattern-teasers{display:none}
+#uxVisualView .fortress-explorer .fort-summary h2{font-size:clamp(17px,4.2vw,20px);line-height:1.5}
+#uxVisualView .fortress-explorer .fort-summary h2 strong{white-space:nowrap}
+#uxVisualView .fortress-explorer[open] .fort-summary p,
+#uxVisualView .pattern-explorer[open] .pattern-summary p{font-size:12px;line-height:1.65;margin:0}
+.ux-fort-idea{border:1px solid #385f73;border-radius:8px;margin:0 0 11px;background:#123140}
+.ux-fort-idea>summary{font-size:12px;font-weight:850;color:#c6e1dc;padding:10px 11px;cursor:pointer;list-style:none}
+.ux-fort-idea>summary::-webkit-details-marker{display:none}
+.ux-fort-idea>summary::after{content:' ▾';color:#a1eed8}
+.ux-fort-idea[open]>summary::after{content:' ▴'}
+.ux-fort-idea>.fort-idea{margin:0 8px 9px;padding:9px;font-size:11px;line-height:1.7}
+#uxVisualView .fort-summary h2,#uxVisualView .pattern-summary h2{overflow-wrap:normal}
