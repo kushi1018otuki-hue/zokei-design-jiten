@@ -99,6 +99,7 @@
 @media(max-width:460px){.quick-categories{gap:7px}.quick-categories button{font-size:11px;padding:8px 10px;min-height:39px}}
 </style>
 <link rel="stylesheet" href="./patterns.css">
+<link rel="stylesheet" href="./fortress.css">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="造形辞典">
@@ -111,7 +112,55 @@
 <body><header class="masthead"><div class="shell"><div class="topline">DESIGN PARTS / VISUAL LEXICON</div><h1 class="hero-title">造形デザイン<span>辞典</span></h1><p class="lead">「ここが張り出した形」「砲塔の後ろの箱」「船の横にある段差」——その部位の名前を、図と説明から探せます。戦車・艦船・要塞・軍港・航空機・SFメカの部位、武装配置、歴史的な軍事施設、基本形状を一つに集約。</p><div class="hero-stats"><span class="tag">全 428 語</span><span class="tag">既存の形状用語 82 語も収録</span><span class="tag">格納・展開兵装 +29 語</span><span class="tag">模様・パターン +60 語</span><span class="tag">スマホ対応</span><span class="tag">オフライン対応</span><span class="tag">v4.2</span></div></div></header>
 <main class="shell main">
 <section class="toolbar" aria-label="用語検索"><div class="searchbox"><label class="sr-only" for="search">用語を検索</label><span class="searchicon" aria-hidden="true">⌕</span><input type="search" id="search" placeholder="名前・見た目・位置で検索　例：パネルライン・迷彩・艦砲・関節" autocomplete="off" spellcheck="false"><button class="resetsearch" type="button" id="resetSearch" aria-label="検索を消去">×</button></div><div class="filters" id="filters" aria-label="カテゴリで絞り込む"></div></section>
-<nav class="quick-categories" aria-label="分野をすぐ検索"><span class="title">分野を選んで探す</span><button type="button" data-open-patterns>🎨 模様・パターン</button><button type="button" data-quick-cat="展開・格納兵装">🚀 格納・展開武装</button><button type="button" data-quick-cat="ロボット構造">🤖 ロボット関節</button><button type="button" data-quick-cat="武装配置">⚓ 砲塔・砲列</button><button type="button" data-quick-cat="形状・輪郭">◇ 基本形状</button></nav>
+<nav class="quick-categories" aria-label="分野をすぐ検索"><span class="title">分野を選んで探す</span><button type="button" data-open-fortress="宇宙要塞">🏰 要塞・軍港</button><button type="button" data-open-patterns>🎨 模様・パターン</button><button type="button" data-quick-cat="展開・格納兵装">🚀 格納・展開武装</button><button type="button" data-quick-cat="ロボット構造">🤖 ロボット関節</button><button type="button" data-quick-cat="武装配置">⚓ 砲塔・砲列</button><button type="button" data-quick-cat="形状・輪郭">◇ 基本形状</button></nav>
+<section class="fortress-zone" id="fortressZone" aria-label="軍事造形・要塞の部位と構造">
+<details class="fortress-explorer" id="fortressExplorer">
+ <summary class="fort-summary"><div><span class="fort-kicker">FORTRESS & MILITARY INFRASTRUCTURE / NEW</span>
+  <h2>🏰 要塞・軍事施設の構造図鑑 <strong>100項目</strong></h2>
+  <p>稜堡式要塞・地下バンカー・軍港・宇宙岩盤要塞・惑星防衛設備・三次元防衛圏。<br>役目・成立した時代・構造・設置位置から造形を理解できます。</p><span class="fort-open">断面図・平面図から探す ▾</span></div>
+  <div class="fort-pic" id="fortTeaser" aria-hidden="true"></div>
+ </summary>
+ <div class="fort-body">
+  <div class="fort-idea"><b>管理プロジェクトの設計原則</b>：宇宙要塞は単独の巨大砲台ではなく、艦隊の停泊・整備・補給・指揮・防衛が結び付いた巨大な軍港にもなります。宇宙空間は海の固定回廊と同じではないため、敵にとって要塞が無視しにくい理由は、物流・目的地・通信・迎撃範囲などの組合せから考えます。<br>
+  <b>参考の方向性</b>：小惑星岩盤型・コロニー型・宇宙都市型・機動人工要塞。企画内の呼称例は「アルセナ軍港／アルセナ・プライム」「トゥマルギ要塞」ですが、これだけで構造やデザインが確定したことにはなりません。</div>
+  <nav class="fort-groupbuttons" id="fortGroupButtons" aria-label="要塞図鑑の部門"></nav>
+  <div class="fort-diagram-grid">
+   <div class="fort-diagram" id="fortVisual" aria-label="選んだ用語の位置や断面の模式図"></div>
+   <div class="fort-about"><b>平面・断面・立体を比較</b><p id="fortAbout"></p><div class="fort-notice">橙色のマーカーは、部位が位置する概略場所です。正確な設計図や砲台施工図ではありません。</div>
+    <p class="fort-setlist">図面：稜堡は平面／地下は断面／軍港は施設配置／宇宙要塞は概念斜視／惑星は側面／防衛圏は三次元模式図。</p></div>
+  </div>
+  <div class="fort-searchline"><label for="fortSearch">この分野の部位を名前・用途で探す<input type="search" id="fortSearch" placeholder="例：砲眼、トラス、岩盤、ドック、シールド"></label><span class="fort-count" id="fortCount"></span></div>
+  <div class="fort-wordlist" id="fortWordList" aria-label="模式図に表示する軍事造形用語"></div>
+  <section class="fort-detail" id="fortDetail" aria-label="選択した要塞用語の造形説明" hidden>
+   <header class="fort-detail-header"><h3 id="fortDetailName"></h3><span class="fort-detail-kind" id="fortDetailKind"></span></header>
+   <div class="fort-facts">
+    <p><b>形状・断面の特徴</b><span id="fortDetailShape"></span></p>
+    <p><b>役目・機能</b><span id="fortDetailRole"></span></p>
+    <p><b>歴史・由来</b><span id="fortDetailHistory"></span></p>
+    <p><b>取り付け位置</b><span id="fortDetailWhere"></span></p>
+    <p><b>造形上の注意</b><span id="fortDetailTip"></span></p>
+   </div>
+   <div class="fort-selects">
+    <label>設計スケール<select id="fortScale"><option>巨大宇宙要塞／多区画モデル</option><option>1000m超の超戦艦・軍港</option><option>中小型の施設・ロボット</option></select></label>
+    <label>形状の表現<select id="fortMethod"><option>立体モデルの実ジオメトリ</option><option>形状は簡素、細部をノーマル・デカールで表現</option><option>低ポリのブロックアウトモデル</option></select></label>
+    <label>確認視点<select id="fortView"><option>斜視図・上面図・側面図・断面図</option><option>上面配置と内部の断面を優先</option><option>360°回転と接写で確認</option></select></label>
+    <label>ディテール密度<select id="fortDensity"><option>ゲーム戦闘距離で見える大形状中心</option><option>通常距離＋接写時の中小ディテール</option><option>展示・拡大鑑賞向け高密度</option></select></label>
+   </div>
+   <label class="fort-prompt-label" for="fortText">AIへ渡せる造形指示文</label>
+   <textarea id="fortText" readonly></textarea>
+   <div class="fort-actions"><button type="button" id="fortCopy">指示をコピー</button><button type="button" id="fortAdd">＋ 指示メーカーへ</button><button type="button" id="fortZoom">図を拡大</button><button type="button" id="fortDictionary">辞典から探す</button></div>
+  </section>
+  <details class="fort-references"><summary>参考資料・用語の区分（史実／創作）</summary>
+   <p>実在する築城・港湾・宇宙構造の名前と、創作SFに必要な説明用ラベルを区別して収録しました。</p>
+   <p><a href="https://www.battlefields.org/learn/articles/glossary-fortification-terms" target="_blank" rel="noopener noreferrer">American Battlefield Trust — 築城用語集</a><br>
+      <a href="https://sites-vauban.org/en/resources/illustrated-glossary" target="_blank" rel="noopener noreferrer">Network of Vauban Sites — 図解築城用語</a><br>
+      <a href="https://www.nasa.gov/international-space-station/integrated-truss-structure/" target="_blank" rel="noopener noreferrer">NASA — 宇宙ステーションの連結トラス</a></p>
+   <p>固有作品の例（ア・バオア・クー／ガイエスブルク／スカリフのシールドゲート等）は形状・役割の比較参考に限り、同一の造形を複製する指示ではありません。</p>
+  </details>
+  <p class="fort-extra">※ 描画は独自の模式図です。土木・軍事施設の実設計、構造強度・砲火運用の設計資料ではありません。「史実に由来する用語」と「SFのための造形説明語」を混同しないよう表示しています。</p>
+ </div>
+</details>
+</section>
 <section class="pattern-zone" id="patternZone" aria-label="模様・パターンのビジュアル図鑑">
  <details class="pattern-explorer" id="patternExplorer">
   <summary class="pattern-summary">
@@ -531,6 +580,7 @@ initPatternGallery({onCopy:copy,onZoom:openFigure,onAdd:(v,name)=>{$('#builder')
 
 </script>
 <script src="./military-atlas.js"></script>
+<script src="./fortress.js"></script>
 <script>
 if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
   window.addEventListener('load', () => {

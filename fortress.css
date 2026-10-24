@@ -1,0 +1,59 @@
+/* Fortress and military-infrastructure atlas, v4.3 — mobile first */
+.fortress-zone{margin:0 0 20px}
+.fortress-explorer{border:1px solid #577c90;border-radius:17px;background:linear-gradient(115deg,#142b3a,#102e44);overflow:hidden;box-shadow:0 15px 42px #06121d66}
+.fortress-explorer>summary{list-style:none;cursor:pointer}
+.fortress-explorer>summary::-webkit-details-marker{display:none}
+.fortress-explorer>summary:focus-visible{outline:3px solid #d5be78;outline-offset:-4px}
+.fort-summary{display:grid;grid-template-columns:minmax(0,1fr) minmax(120px,210px);align-items:center;gap:11px;padding:16px 18px}
+.fort-kicker{font-size:10px;letter-spacing:.14em;color:#8cddd4;font-weight:900}
+.fort-summary h2{font-size:clamp(18px,2.3vw,25px);color:#ecf8f6;margin:6px 0}
+.fort-summary h2 strong{color:#f2bc71}
+.fort-summary p{font-size:12px;color:#c1d6db;line-height:1.7;margin:5px 0 7px}
+.fort-summary .fort-open{display:inline-block;border-radius:8px;color:#04262c;background:#9ce7cf;padding:9px 12px;font-size:12px;font-weight:900}
+.fort-summary .fort-pic{overflow:hidden;border:1px solid #3f6471;border-radius:9px;background:#071b29;min-width:0}
+.fort-summary .fort-pic svg{display:block;width:100%;height:auto}
+.fortress-explorer[open] .fort-open{color:#e0f3f4;background:#355364}
+.fort-body{background:#081f2f;border-top:1px solid #3c6479;padding:15px}
+.fort-idea{padding:10px 12px;background:#1a3c4c;color:#d1e6e8;border-radius:9px;border-left:3px solid #eac37e;font-size:12px;line-height:1.85;margin-bottom:13px}
+.fort-groupbuttons{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;padding:4px 1px 11px;margin:0 0 10px}
+.fort-groupbuttons button{border:1px solid #69889a;background:#224253;color:#d5e9eb;white-space:nowrap;flex:none;border-radius:20px;padding:8px 12px;font-size:12px;font-weight:800;min-height:40px}
+.fort-groupbuttons button[aria-pressed="true"]{background:#8bdfcd;color:#073139;border-color:#8bdfcd}
+.fort-diagram-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:13px;align-items:stretch}
+.fort-diagram{background:#0d2738;border:1px solid #597c90;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.fort-diagram svg{width:100%;height:auto;display:block}
+.fort-about{background:#163a4c;border:1px solid #3c7185;border-radius:10px;padding:13px 13px 11px;display:flex;flex-direction:column;gap:8px}
+.fort-about b{color:#f1c780;font-size:13px}
+.fort-about p{margin:0;color:#c0d8de;line-height:1.7;font-size:12px}
+.fort-about .fort-notice{color:#abd0c8;font-size:11px;margin-top:auto}
+.fort-about .fort-setlist{font-size:11px;color:#cbd9dc}
+.fort-searchline{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px;align-items:center;margin:13px 0 8px}
+.fort-searchline label{display:block;font-size:11px;color:#c2dade;font-weight:800}
+.fort-searchline input{display:block;margin-top:6px;background:#0e2636;color:#edf7f6;border:1px solid #63899a;border-radius:9px;width:100%;padding:10px 12px;font-size:16px;min-height:44px}
+.fort-count{align-self:end;white-space:nowrap;font-size:11px;color:#eac180;padding:0 0 10px}
+.fort-wordlist{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0 15px;max-height:208px;overflow-y:auto}
+.fort-wordlist button{font-size:11px;padding:8px 10px;min-height:37px;border:1px solid #557a8b;border-radius:7px;background:#254455;color:#e0edef;font-weight:750}
+.fort-wordlist button[aria-pressed="true"]{border-color:#e6b97b;color:#fff5da;background:#4f463b}
+.fort-wordlist .fort-none{font-size:12px;color:#cde2e5}
+.fort-detail{scroll-margin-top:165px;background:linear-gradient(145deg,#18394c,#0f2a3c);border:1px solid #5b9e9a;border-radius:12px;padding:15px}
+.fort-detail-header{display:flex;gap:9px;justify-content:space-between;align-items:baseline;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid #4e7481;margin-bottom:14px}
+.fort-detail-header h3{font-size:clamp(17px,2.2vw,21px);margin:0;color:#f0f6f3}
+.fort-detail-kind{font-size:11px;color:#8fdbca}
+.fort-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 16px;margin:0 0 12px}
+.fort-facts p{margin:0;font-size:12px;line-height:1.65;color:#c7dde1}
+.fort-facts b{display:block;color:#f0c486;font-size:11px;margin-bottom:3px}
+.fort-selects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.fort-selects label{color:#c2dce0;font-size:11px;font-weight:850}
+.fort-selects select{width:100%;margin-top:5px;min-height:43px;padding:9px;background:#0b293b;border:1px solid #517a8c;border-radius:8px;color:#f1f9fa;font-size:12px}
+.fort-prompt-label{font-size:12px;font-weight:800;color:#ecc789;display:block;margin:12px 0 5px}
+.fort-detail textarea{width:100%;min-height:167px;font-size:12px;color:#edf7f6;border:1px solid #537e90;border-radius:9px;background:#0b2232;padding:10px 12px;line-height:1.75;resize:vertical}
+.fort-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:9px}
+.fort-actions button{border:1px solid #5f90a0;background:#234e62;color:#e7f6f7;padding:9px 8px;font-size:12px;font-weight:850;border-radius:8px;min-height:43px}
+.fort-actions button:first-child{background:#81ddc8;border-color:#81ddc8;color:#032631}
+.fort-actions button:nth-child(2){background:#746046;border-color:#d9ad77;color:#fff4e2}
+.fort-references{margin:15px 0 0;padding:12px;background:#132f3e;border:1px solid #315668;border-radius:9px;color:#bad4dd;font-size:11px;line-height:1.7}
+.fort-references summary{color:#f1d2a4;font-weight:850;cursor:pointer}
+.fort-references a{color:#a3ebe0;overflow-wrap:anywhere}
+.fort-extra{color:#bed5d7;font-size:11px;line-height:1.75;margin-top:10px}
+.fortress-zone [hidden]{display:none!important}
+@media(max-width:700px){.fort-body{padding:11px}.fort-summary{grid-template-columns:minmax(0,1fr) 120px;padding:14px}.fort-summary p{font-size:11px}.fort-diagram-grid{grid-template-columns:1fr}.fort-facts{grid-template-columns:1fr 1fr;gap:12px}.fort-wordlist{max-height:178px}}
+@media(max-width:410px){.fort-summary{grid-template-columns:1fr}.fort-summary .fort-pic{width:100%;max-height:114px}.fort-summary .fort-pic svg{height:114px}.fort-facts{grid-template-columns:1fr}.fort-groupbuttons button{font-size:11px;padding:8px}.fort-wordlist button{font-size:11px}.fort-selects{grid-template-columns:1fr}.fort-searchline{grid-template-columns:1fr}.fort-count{justify-self:start;padding:0}.fort-summary h2{font-size:20px}}
