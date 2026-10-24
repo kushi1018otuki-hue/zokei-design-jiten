@@ -1,0 +1,56 @@
+/* Surface pattern gallery / phone-first. Uses only local SVG generated in patterns.js */
+.pattern-zone{margin:0 0 20px}
+.pattern-explorer{border:1px solid #49788b;border-radius:18px;background:linear-gradient(135deg,#122d3f,#102738);box-shadow:0 9px 35px #00101d45;overflow:hidden}
+.pattern-explorer>summary{list-style:none;cursor:pointer}
+.pattern-explorer>summary::-webkit-details-marker{display:none}
+.pattern-summary{padding:17px 18px;display:grid;grid-template-columns:minmax(0,1fr) 206px auto;align-items:center;gap:17px;min-height:124px}
+.pattern-kicker{display:block;color:#79e2cc;letter-spacing:.14em;font-size:10px;font-weight:900;margin-bottom:6px}
+.pattern-summary h2{font-size:clamp(17px,2vw,23px);margin:3px 0 7px;color:#f0f9fa;letter-spacing:-.02em}
+.pattern-summary p{margin:0;line-height:1.6;font-size:12px;color:#b7cfd8}
+.pattern-cta{border-radius:9px;background:#8de4cf;color:#102e35;padding:11px 12px;white-space:nowrap;font-weight:900;font-size:12px}
+.pattern-explorer[open] .pattern-cta{background:#264657;color:#dff5f2}
+.pattern-teasers{display:flex;min-width:0;gap:6px;align-items:center}
+.pattern-teaser-tile{display:block;flex:1;min-width:0;overflow:hidden;border-radius:5px;border:1px solid #6a96a7;background:#1c374a}
+.pattern-teaser-tile svg{display:block;width:100%;height:55px}
+.pattern-body{padding:14px 17px 21px;border-top:1px solid #376377;background:#091e2d}
+.pattern-info{font-size:12px;line-height:1.7;color:#bbd0d8;background:#193545;border-left:3px solid #e7bc75;border-radius:5px;padding:10px 12px;margin:2px 0 16px}
+.pattern-formhead{display:block;font-size:12px;color:#e5f4f3;font-weight:850;margin:0 0 6px}
+.pattern-query{width:100%;font-size:16px;color:#f4f9f8;background:#0c2333;border:1px solid #557c8a;border-radius:10px;padding:12px 14px;min-height:46px}
+.pattern-chips{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;padding:11px 0 7px;margin:0 0 9px}
+.pattern-chips button{flex:none;border:1px solid #537789;border-radius:999px;padding:8px 12px;min-height:37px;color:#d8edf0;background:#203e4f;font-size:12px;font-weight:750;white-space:nowrap}
+.pattern-chips button.active{background:#8de4cf;color:#0c3135;border-color:#8de4cf}
+.pattern-status{color:#a7c5cb;font-size:11px;font-weight:750;margin:8px 2px 11px}
+.pattern-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.pattern-item{border:1px solid #39596c;border-radius:12px;background:#142e40;min-width:0;overflow:hidden;display:flex;flex-direction:column}
+.pattern-thumb{display:block;background:#102a3b;border:0;width:100%;padding:0;overflow:hidden}
+.pattern-thumb svg{display:block;width:100%;height:auto;max-height:180px}
+.pattern-item-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 8px;padding:8px 10px 3px}
+.pattern-item-meta strong{color:#effafa;line-height:1.3;font-size:13px}
+.pattern-item-meta span{font-size:10px;color:#9fc3cb}
+.pattern-item p{font-size:11px;line-height:1.55;color:#b4cbd2;margin:3px 10px 10px;flex:1}
+.pattern-item-actions{display:flex;gap:5px;margin:0 9px 9px}
+.pattern-item-actions button{flex:1;min-width:0;padding:7px 4px;border-radius:6px;background:#223f50;border:1px solid #52778a;color:#e7f0f2;font-size:11px;font-weight:850;min-height:38px}
+.pattern-item-actions button:last-child{background:#245d5b;border-color:#429d93;color:#dbfff6}
+.pattern-more{display:block;margin:15px auto 2px;border:1px solid #6b91a2;background:#214759;color:#e8f6f4;font-size:12px;font-weight:800;border-radius:10px;padding:10px 17px}
+.pattern-none{grid-column:1/-1;color:#c3d8dd;text-align:center;border:1px dashed #6f8b95;border-radius:8px;padding:20px}
+.pattern-pick{scroll-margin-top:174px;margin:13px 0 17px;border:1px solid #73aaa6;border-radius:13px;padding:16px;background:linear-gradient(145deg,#173948,#132e3d)}
+.pattern-pick-title{display:flex;justify-content:space-between;gap:10px;align-items:baseline;border-bottom:1px solid #426779;padding-bottom:10px;margin-bottom:13px}
+.pattern-pick-title h3{margin:0;font-size:21px}
+.pattern-pick-title span{font-size:11px;color:#8fe4cc;font-weight:800}
+.pattern-pick-body{display:grid;grid-template-columns:minmax(220px,0.85fr) minmax(0,1.15fr);gap:17px;align-items:start}
+.pattern-pick-art svg{display:block;width:100%;border-radius:10px;border:1px solid #486b76}
+.pattern-pick-art p{font-size:12px;line-height:1.7;color:#c6dce0;margin:8px 0}
+.pattern-pick-art .small{color:#9cc4ca;font-size:11px}
+.pattern-selects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.pattern-selects label{display:block;font-size:12px;color:#bedde1;font-weight:750}
+.pattern-selects select{display:block;margin-top:4px;width:100%;min-height:43px;background:#0b2635;color:#eefaf9;border:1px solid #5b8894;border-radius:8px;font-size:12px;padding:8px;appearance:auto}
+.pattern-text{width:100%;min-height:170px;margin-top:12px;border:1px solid #5c8893;border-radius:8px;background:#091f30;color:#f2faf8;font-size:12px;line-height:1.75;padding:11px;resize:vertical}
+.pattern-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.pattern-controls button{min-height:41px;border-radius:8px;background:#205167;border:1px solid #74a0a9;color:#f3fcfb;font-size:12px;font-weight:850;padding:9px 6px}
+.pattern-controls button:first-child{background:#259080;color:#031e21;border-color:#84dcc6}
+.pattern-controls button:nth-child(2){background:#705834;border-color:#ddad6b;color:#fff1d0}
+.pattern-explorer :where(button,summary):focus-visible{outline:3px solid #f0c377;outline-offset:2px}
+.pattern-zone [hidden]{display:none!important}
+@media(max-width:1050px){.pattern-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.pattern-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pattern-summary{grid-template-columns:minmax(0,1fr);gap:10px;padding:14px 13px}.pattern-teasers{width:100%}.pattern-teaser-tile svg{height:49px}.pattern-cta{justify-self:start}.pattern-body{padding:12px}.pattern-pick-body{grid-template-columns:1fr}.pattern-pick-art svg{max-height:250px}.pattern-pick-title h3{font-size:18px}}
+@media(max-width:360px){.pattern-grid{gap:7px}.pattern-item-meta{padding:6px 6px 2px}.pattern-item-meta strong{font-size:12px}.pattern-item p{font-size:10px;margin:4px 6px 7px}.pattern-item-actions{margin:0 6px 7px}.pattern-item-actions button{font-size:10px}.pattern-selects{grid-template-columns:1fr}}
